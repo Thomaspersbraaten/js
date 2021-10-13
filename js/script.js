@@ -67,7 +67,7 @@ for (i = 15; i <= 25; i++) {
     }
 }
 
-// question 3 
+// Question 3 
 
 var games = [
     {
@@ -115,8 +115,85 @@ function whatIDontLike(insects) {
 whatIDontLike("ticks")
 
 
-// question 5
+// Question 5
 
 
-function numbers(number1, number2)
+function substraction(number1, number2) {
+    var convertedNumber1 = parseFloat(number1);
+    var convertedNumber2 = parseFloat(number2);
+    if (isNaN(convertedNumber1) || isNaN(convertedNumber2)) {
+        return "Invalid argument(s)"
+    }
+    return convertedNumber1 - convertedNumber2;  
+    // if (convertedNumber1 === "number" && convertedNumber2 === "number") {
+           
+    // }
+
+}
+
+var substractionContainer = document.querySelector("#subtraction");
+var sum = substraction(50, 10)
+
+substractionContainer.innerHTML = sum;
+
+// Question 6
+
+var button = document.querySelector(".page")
+var titleSelector = document.querySelector("title")
+var h1Selector = document.querySelector("h1")
+var ulSelected = document.querySelector("ul")
+var liSelector = document.querySelector("li")
+var bodySelector = document.querySelector("body")
+
+
+
+function changePage() {
+    titleSelector.innerHTML = "Updated title";
+    bodySelector.style.backgroundColor = "yellow";
+    h1Selector.style.color = "green", h1Selector.style.fontFamily = "impact", h1Selector.innerHTML = "<a href=#>" + "Programming Foundations Course Assignment" + "</a>";
+    ulSelected.style.padding = 0;
+    ulSelected.style.listStyle = "none";
+}
+
+button.onclick = changePage;
+
+// Question 7
+
+var toys = [
+    {
+     name: "Lego",
+     price: 15.6,
+    },
+    {
+     name: "Master of the Universe",
+     price: "28.3",
+    },
+    {
+     name: "Barbie",
+     price: null,
+    },
+    {
+     name: "Mr Potato Head",
+     price: 89.99,
+    },
+];
+
+
+var toysLength = toys.length;
+var priceButton = document.querySelector(".price")
+var totalPrice = document.querySelector("#total")
+
+
+function ConvertPricetoWebpage() {
+    var sum = 0;
+    for (i = 0; i < toysLength; i++) {
+        if (toys[i].price === null) {
+            continue;
+        }
+        sum = sum + parseFloat(toys[i].price);
+    }
+    totalPrice.innerHTML = sum;
+}
+
+priceButton.onclick = ConvertPricetoWebpage;
 
