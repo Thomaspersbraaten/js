@@ -1,62 +1,21 @@
-// // Question 1 - 
-
-// var pets = [
-//     {
-//       type: "cat",
-//       age: 5.5,
-//     },
-//     {
-//       type: "dog",
-//       age: 3.8,
-//     },
-//     {
-//       type: "parrot",
-//       age: 4.0,
-//     },
-// ];
-
-// for (var i = 0; i < pets.length; i++){
-//     if (pets[i].age >= 4) {
-//         console.log(pets[i].type);
-//     }
-// }
-
-// // Question 2
-
-// function typeCheck(value) {
-//     if (typeof value === "boolean") {
-//         console.log(value);
-//     }
-//     else {
-//         console.log("Please pass a boolean value in");
-//     }
-// }
-
-// typeCheck(true)
-
-// // Question 3 
-
-// var subHeading = document.querySelector("h2");
-// var button = document.querySelector("button");
-
-// function changeSubHeading() {
-//     subHeading.innerHTML = "Updated subheading";
-//     subHeading.style.color = "blue";
-// }
-
-// button.onclick = changeSubHeading;
- 
-
-
 // Question 1
 
 var outOfStock = true;
 
-if (outOfStock === true) {
+if (outOfStock) {
     console.log("Out of stock");
 }
 else {
     console.log("In stock");
+}
+
+// OR
+
+if (!outOfStock) {
+    console.log("in stock");
+}
+else {
+    console.log("out of stock");
 }
 
 // Question 2
@@ -92,11 +51,11 @@ var games = [
     },
 ];
 
-var listedGame = document.querySelector("ul")
+var listedGame = document.querySelector("ul");
 
 for (i = 0; i < games.length; i++) {
-    if (games[i].rating < 3.5 && games[i].rating != null)  {
-    listedGame.innerHTML += "<li>" + games[i].title + ":" + "  " + games[i].rating; + "</li>"  
+    if (games[i].rating < 3.5 && games[i].rating !== null)  {
+    listedGame.innerHTML += "<li>" + games[i].title + ": " + games[i].rating; + "</li>"; 
     }    
 }
 
@@ -112,50 +71,40 @@ function whatIDontLike(insects) {
     }
 }
 
-whatIDontLike("ticks")
-
+whatIDontLike("ticks");
 
 // Question 5
 
-
-function substraction(number1, number2) {
+function substractionOfNumbers(number1, number2) {
     var convertedNumber1 = parseFloat(number1);
     var convertedNumber2 = parseFloat(number2);
     if (isNaN(convertedNumber1) || isNaN(convertedNumber2)) {
-        return "Invalid argument(s)"
+        return "Invalid argument(s)";
     }
     return convertedNumber1 - convertedNumber2;  
-    // if (convertedNumber1 === "number" && convertedNumber2 === "number") {
-           
-    // }
-
 }
 
 var substractionContainer = document.querySelector("#subtraction");
-var sum = substraction(50, 10)
+var sum = substractionOfNumbers(50, "10");
 
 substractionContainer.innerHTML = sum;
 
 // Question 6
 
-var button = document.querySelector(".page")
-var titleSelector = document.querySelector("title")
-var h1Selector = document.querySelector("h1")
-var ulSelected = document.querySelector("ul")
-var liSelector = document.querySelector("li")
-var bodySelector = document.querySelector("body")
-
-
+var pageButton = document.querySelector(".page");
+var titleSelector = document.querySelector("title");
+var bodySelector = document.querySelector("body");
+var h1Selector = document.querySelector("h1");
+var ulSelector = document.querySelector("ul");
 
 function changePage() {
     titleSelector.innerHTML = "Updated title";
     bodySelector.style.backgroundColor = "yellow";
     h1Selector.style.color = "green", h1Selector.style.fontFamily = "impact", h1Selector.innerHTML = "<a href=#>" + "Programming Foundations Course Assignment" + "</a>";
-    ulSelected.style.padding = 0;
-    ulSelected.style.listStyle = "none";
+    ulSelector.style.padding = 0, ulSelector.style.listStyle = "none";
 }
 
-button.onclick = changePage;
+pageButton.onclick = changePage;
 
 // Question 7
 
@@ -178,11 +127,9 @@ var toys = [
     },
 ];
 
-
+var priceButton = document.querySelector(".price");
+var totalPrice = document.querySelector("#total");
 var toysLength = toys.length;
-var priceButton = document.querySelector(".price")
-var totalPrice = document.querySelector("#total")
-
 
 function ConvertPricetoWebpage() {
     var sum = 0;
@@ -196,4 +143,3 @@ function ConvertPricetoWebpage() {
 }
 
 priceButton.onclick = ConvertPricetoWebpage;
-
